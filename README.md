@@ -8,13 +8,21 @@ content for you.
 
 ## What it does
 
-| Subcommand | What it produces |
-|---|---|
-| `architect` | Documentation skeleton organized by Diataxis mode |
-| `editor` | Audit report: coverage gaps, mode violations, undocumented APIs |
+Diapraxis has three modes, each with its own instructions in [`modes/`](modes/):
 
-Diapraxis never writes documentation prose — you write the content. It provides
-the scaffolding and the audit.
+| Mode | Instructions | What it produces |
+|------|-------------|-----------------|
+| `architect` | [`modes/architect.md`](modes/architect.md) | Documentation skeleton organized by Diataxis mode |
+| `editor` | [`modes/editor.md`](modes/editor.md) | Audit report: coverage gaps, mode violations, undocumented APIs |
+| `engineer` | [`modes/engineer.md`](modes/engineer.md) | Build, serve, preview, publish docs; manage CI/CD and environments |
+
+To keep the skill lean at load time, it uses [progressive disclosure](https://docs.claude-mem.ai/progressive-disclosure):
+[`SKILL.md`](SKILL.md) holds the router and shared primer, while mode-specific
+instructions in [`modes/`](modes/) are loaded only when needed.
+
+> Diapraxis never writes documentation prose — you write the content.
+
+Instead, it provides the scaffolding and the audit.
 
 
 ## Usage
@@ -25,7 +33,7 @@ Open a new session and use trigger phrases like:
 - "What's missing from my docs?"
 - "Librarian, I need a documentation outline"
 
-Or invoke explicitly: `/diapraxis architect` or `/diapraxis editor`.
+Or invoke explicitly: `/diapraxis architect`, `/diapraxis editor`, or `/diapraxis engineer`.
 
 
 
@@ -43,12 +51,6 @@ Or use the installer:
 ./install.sh                  # Auto-detect platform
 ./install.sh --platform cursor
 ./install.sh --all
-```
-
-Or install via [skillfish](https://skill.fish) (cross-platform CLI skill manager):
-
-```bash
-npx skillfish add rtbs-dev/diapraxis
 ```
 
 Or install via [skillfish](https://skill.fish) (cross-platform CLI skill manager):
