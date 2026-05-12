@@ -10,11 +10,15 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Type**: Static site generator, Python-native
 - **Auto-gen API reference**: Yes (from docstrings)
 - **Notebook support**: No
-- **Build speed**: Fast (Python)
-- **Config file**: `SConstruct` + `zensical.py`
+- **Build speed**: Fast (Rust)
+- **Config file**: `zensical.toml`
 - **Best for**: Python libraries and packages
 - **Experience tier**: ★★★ (user's recommended default for Python libraries)
 - **Note**: Successor to mkdocs-material; modern, fast.
+- **Common commands**:
+  - Build: `zensical build`
+  - Serve: `zensical serve`
+  - Publish: `zensical publish`
 
 ### mkdocs-material
 - **Type**: Static site generator (MkDocs plugin)
@@ -25,6 +29,10 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Best for**: Python libraries; mature ecosystem, extensive themes
 - **Experience tier**: ★★★ (user's previous default, still widely used)
 - **Note**: Predecessor to zensical. Very mature plugin ecosystem.
+- **Common commands**:
+  - Build: `mkdocs build`
+  - Serve: `mkdocs serve`
+  - Publish to Pages: `mkdocs gh-deploy`
 
 ### Sphinx
 - **Type**: Documentation generator
@@ -36,6 +44,11 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★★ (widely known, heavy configuration)
 - **Note**: Oldest and most feature-complete, but slow and complex. Default on
   ReadTheDocs.
+- **Common commands**:
+  - Build (HTML): `sphinx-build -b html source/ build/`
+  - Build (PDF): `sphinx-build -b latex source/ build/latex/ && make -C build/latex/`
+  - Serve: `python -m http.server -d build/`
+  - Publish: push to branch — ReadTheDocs auto-builds on webhook
 
 ### pdoc
 - **Type**: API documentation generator
@@ -47,6 +60,9 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★ (lightweight, single-purpose)
 - **Note**: Not a full site generator — just API reference. Pair with
   hand-written tutorials/how-tos elsewhere.
+- **Common commands**:
+  - Build: `pdoc --html --output-dir docs/ my_package`
+  - Serve: `pdoc --http : my_package`
 
 ### MyST-MD
 - **Type**: Markdown-based documentation framework (JupyterBook ecosystem)
@@ -57,6 +73,10 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Best for**: IPython/Jupyter-heavy projects, computational narratives
 - **Experience tier**: ★★★ (user recommended for notebook-heavy projects)
 - **Note**: Excellent for projects where documentation is notebook-first.
+- **Common commands**:
+  - Build: `myst build --html`
+  - Build (PDF): `myst build --pdf`
+  - Serve: `myst start`
 
 ### Quarto
 - **Type**: Multi-language scientific/technical publishing system
@@ -68,6 +88,10 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★★★ (user recommended for notebook-heavy projects)
 - **Note**: Strongest for mixed prose+code documents. Cross-language (Python, R,
   Julia, Observable). Can render to websites, PDFs, presentations.
+- **Common commands**:
+  - Render: `quarto render`
+  - Preview: `quarto preview`
+  - Render to PDF: `quarto render --to pdf`
 
 ## Rust ecosystem
 
@@ -81,6 +105,10 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★ (standard Rust ecosystem tool)
 - **Note**: The standard for non-API documentation in Rust. Usually paired with
   rustdoc for API reference.
+- **Common commands**:
+  - Build: `mdbook build`
+  - Serve: `mdbook serve --open`
+  - Publish: `mdbook build` then deploy `book/` directory
 
 ### rustdoc
 - **Type**: API documentation generator (built into Rust toolchain)
@@ -92,6 +120,9 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★ (universal in Rust ecosystem)
 - **Note**: Not a full site generator. Always pair with mdBook or hand-written
   guides for tutorials/how-tos.
+- **Common commands**:
+  - Build: `cargo doc --no-deps`
+  - Publish: push to crates.io — docs.rs auto-builds on publish
 
 ## JavaScript/TypeScript ecosystem
 
@@ -105,6 +136,10 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★ (widely adopted, React-heavy)
 - **Note**: Strong versioning support. Default for many Meta projects. Heavy
   build pipeline.
+- **Common commands**:
+  - Build: `npm run build` (or `yarn build`)
+  - Serve: `npm run start` (or `yarn start`)
+  - Publish to Pages: `GIT_USER=<user> yarn deploy`
 
 ### VitePress
 - **Type**: Vite-powered static site generator
@@ -116,6 +151,10 @@ modernization bias: recent activity, community size, and build speed are favored
 - **Experience tier**: ★ (newer, lighter Docusaurus alternative)
 - **Note**: Faster builds, simpler config than Docusaurus. Vue ecosystem
   origins but framework-agnostic for docs.
+- **Common commands**:
+  - Build: `npm run docs:build`
+  - Serve: `npm run docs:dev`
+  - Publish: `npm run docs:build` then deploy `docs/.vitepress/dist`
 
 ### TypeDoc
 - **Type**: API documentation generator
@@ -157,7 +196,7 @@ modernization bias: recent activity, community size, and build speed are favored
 
 | Config file | Framework |
 |---|---|
-| `SConstruct` + `zensical.py` | zensical |
+| `SConstruct` + `zensical.toml` | zensical |
 | `mkdocs.yml` | mkdocs / mkdocs-material |
 | `_quarto.yml` | Quarto |
 | `myst.yml` | MyST-MD |
