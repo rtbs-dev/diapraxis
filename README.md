@@ -5,46 +5,17 @@ Diapraxis produces structural scaffolding (outlines, skeletons) and editorial au
 (gap analysis, undocumented APIs, coverage checks) — it does **not** write documentation
 content for you.
 
-## Installation
 
-```bash
-# Clone into your platform's skills directory:
+## What it does
 
-# Claude Code
-git clone https://github.com/your-org/diapraxis.git ~/.claude/skills/diapraxis
+| Subcommand | What it produces |
+|---|---|
+| `architect` | Documentation skeleton organized by Diataxis mode |
+| `editor` | Audit report: coverage gaps, mode violations, undocumented APIs |
 
-# VS Code Copilot
-git clone https://github.com/your-org/diapraxis.git .github/skills/diapraxis
+Diapraxis never writes documentation prose — you write the content. It provides
+the scaffolding and the audit.
 
-# Cursor
-git clone https://github.com/your-org/diapraxis.git .cursor/rules/diapraxis
-
-# Windsurf
-git clone https://github.com/your-org/diapraxis.git ~/.codeium/windsurf/skills/diapraxis
-
-# OpenCode
-git clone https://github.com/your-org/diapraxis.git ~/.config/opencode/skills/diapraxis
-
-# Cline
-git clone https://github.com/your-org/diapraxis.git ~/.cline/rules/diapraxis
-
-# Roo Code
-git clone https://github.com/your-org/diapraxis.git .roo/rules/diapraxis
-
-# Gemini CLI
-git clone https://github.com/your-org/diapraxis.git ~/.gemini/skills/diapraxis
-
-# Codex CLI / Kiro / Trae / Antigravity / Goose
-git clone https://github.com/your-org/diapraxis.git ~/.agents/skills/diapraxis
-```
-
-Or use the installer:
-
-```bash
-./install.sh                  # Auto-detect platform
-./install.sh --platform cursor
-./install.sh --all
-```
 
 ## Usage
 
@@ -56,16 +27,33 @@ Open a new session and use trigger phrases like:
 
 Or invoke explicitly: `/diapraxis architect` or `/diapraxis editor`.
 
-## Aliases
 
-The skill responds to **"librarian"** and **"Wan Shi Tong"** as session continuation aliases.
 
-## What it does
+## Installation
 
-| Subcommand | What it produces |
-|---|---|
-| `architect` | Documentation skeleton organized by Diataxis mode |
-| `editor` | Audit report: coverage gaps, mode violations, undocumented APIs |
+Clone the repo into your platform's skills directory:
 
-Diapraxis never writes documentation prose — you write the content. It provides
-the scaffolding and the audit.
+```bash
+git clone https://github.com/rtbs-dev/diapraxis.git <path-to-skills-dir>
+```
+
+Or use the installer:
+
+```bash
+./install.sh                  # Auto-detect platform
+./install.sh --platform cursor
+./install.sh --all
+```
+
+Or install via [skillfish](https://skill.fish) (cross-platform CLI skill manager):
+
+```bash
+npx skillfish add rtbs-dev/diapraxis
+```
+
+Or install via [skillfish](https://skill.fish) (cross-platform CLI skill manager):
+
+```bash
+npx skillfish add rtbs-dev/diapraxis
+```
+
