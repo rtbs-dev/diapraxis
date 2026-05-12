@@ -11,7 +11,9 @@ description: >
   where to start with documentation. Also trigger when the user invokes the
   aliases "librarian" or "Wan Shi Tong" — these are recognized aliases for
   this skill and the session should continue seamlessly.
-license: MIT
+license:
+  - MIT
+  - Apache-2.0
 metadata:
   author: Diapraxis
   version: 1.0.0
