@@ -20,19 +20,28 @@ seamless continuity.
 
 ## Output principles
 
-- Never write documentation prose on behalf of the user. The output is always
-  structure, outlines, labels, and audit reports.
-- When in doubt about which Diataxis mode a section belongs to, ask the user
-  rather than guessing.
+- Never write documentation prose on behalf of the user.
+  The output is always structure, outlines, labels, and audit reports.
+- When in doubt about which Diataxis mode a section belongs to,
+  ask the user rather than guessing.
 - If the user's library is very small (e.g., a single-module utility), say so —
-  not every library needs all four modes. A tiny library might only need a
-  reference and one how-to guide.
+  not every library needs all four modes.
+  A tiny library might only need a reference and one how-to guide.
 - Rust libraries using `rustdoc` and Python libraries using Sphinx/pdoc have
-  auto-generation available for reference docs. Note this in architect output
-  and don't recommend hand-writing reference content when auto-generation is
-  available.
-- Framework detection should happen before context gathering — knowing the
-  framework informs the questions asked and the skeleton produced.
+  auto-generation available for reference docs.
+  Note this in architect output and don't recommend hand-writing reference
+  content when auto-generation is available.
+- Framework detection should happen before context gathering —
+  knowing the framework informs the questions asked and the skeleton produced.
+- **Semantic line breaks** ([SemBr](https://sembr.org/)): all markdown prose
+  written by diapraxis MUST use one-sentence-per-line (semantic line breaks).
+  Each sentence, clause, or substantial unit of thought gets its own line.
+  Never join multiple sentences on a single line.
+  This rule applies to all output — outlines,
+  audit reports,
+  AGENTS.md entries,
+  and inline prose.
+  The user may override this with an explicit instruction.
 
 ## AGENTS.md Integration
 
@@ -50,6 +59,9 @@ Framework: zensical
 Hosting: GitHub Pages
 Audience: Python developers, intermediate+
 Auto-gen API reference: Yes (from docstrings)
+
+#### ProseStyle
+- SemBr: Yes (one-sentence-per-line)
 
 ### Notes
 - 2026-05-12: Initial architect session. Tutorial and how-to modes prioritized.
@@ -71,7 +83,7 @@ Auto-gen API reference: Yes (from docstrings)
 ### When to read AGENTS.md
 
 - **Architect Step 0**: Check for existing framework decisions before surveying
-- **Editor pre-audit**: Load config, notes, and tasks before auditing
+- **Editor pre-audit**: Load config, ProseStyle, notes, and tasks before auditing
 - **Any continuation session**: The user may return mid-workflow; AGENTS.md is
   the session resume state
 
@@ -83,6 +95,7 @@ Auto-gen API reference: Yes (from docstrings)
 - **After task tracking decision**: Set up Tasks section (checklist or issue
   tracker pointer)
 - **After editor audit**: Append findings to Notes; add gaps to Tasks
+- **After prose style check**: Record preferences in ProseStyle if agreed upon
 - **When an [UNDECIDED] item is resolved**: Move it from Notes to Config and
   remove the marker (auto-resolve on revisit)
 

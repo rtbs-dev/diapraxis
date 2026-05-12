@@ -14,6 +14,7 @@ what's missing or broken structurally.
 
 1. **Read AGENTS.md** — check for an existing `## Diapraxis` section. Load:
    - `### Config` — framework, hosting, audience decisions
+   - `#### ProseStyle` — prose style preferences (SemBr, line length, etc.)
    - `### Notes` — previous context, known issues, [UNDECIDED] items
    - `### Tasks` — pending items (incorporate these into the audit)
 
@@ -56,16 +57,39 @@ thin? Produce a coverage table:
 - Public APIs with no usage examples anywhere in the docs
 - Examples in docs that don't appear in the test suite (potential drift risk)
 
+### Prose style check
+
+After the Diataxis audit,
+check the documentation source for prose style issues
+according to preferences recorded in AGENTS.md.
+
+1. **Read prose style preferences** from
+   `## Diapraxis` > `#### ProseStyle` in AGENTS.md.
+2. **If no ProseStyle preferences exist**, apply the default:
+   - **[SemBr](https://sembr.org/)** — flag long lines
+     (sentences joined on one line)
+     and hard-wrapped text (fixed column width).
+     Recommend one-sentence-per-line.
+     Link to [sembr.org](https://sembr.org/) for the rationale:
+     cleaner diffs,
+     easier scanning and editing in source,
+     smoother collaboration —
+     all without affecting rendered output.
+3. **Flag issues** in the audit report under a separate "Prose style" heading.
+4. **Offer to record preferences** in AGENTS.md `#### ProseStyle` so future
+   audits apply the same rules without prompting.
+
 ### Produce a prioritized gap list
 
-Order gaps by impact. A missing tutorial is usually higher impact than a
-missing explanation section.
+Order gaps by impact.
+A missing tutorial is usually higher impact than a missing explanation section.
 
 ### Write findings to AGENTS.md
 
 After the audit, update the `## Diapraxis` section in AGENTS.md:
 
 - **Config**: Ensure framework and hosting are recorded if newly discovered
+- **ProseStyle**: Record prose style preferences if agreed upon during the check
 - **Notes**: Append audit findings — coverage gaps, mode violations,
   undocumented APIs, with audit date
 - **Tasks**: Add actionable gaps as checklist items or note them under the
