@@ -38,7 +38,7 @@ If `just` is not available:
    - **Framework** — what toolchain is in use (Config)
    - **Hosting** — where docs are published (Config)
    - **Existing Commands** — any previously recorded commands in Notes
-2. Look up the framework in `references/doc-frameworks.md` to load its common
+2. Look up the framework in `references/doc-frameworks.yaml` to load its common
    commands and characteristics.
 3. Check `just --version` to decide the execution path.
 
@@ -61,14 +61,14 @@ Determine what the user wants. Common categories:
 **If just is available:**
 1. Check the existing justfile for a relevant recipe.
 2. If none exists, look up the framework's common commands in
-   `references/doc-frameworks.md` and add a recipe with: a descriptive name,
+   `references/doc-frameworks.yaml` and add a recipe with: a descriptive name,
    a `#` comment explaining what it does, and proper dependency ordering between
    recipes.
 3. Run `just <recipe>`.
 4. Summarize what the recipe did for the user.
 
 **If just is not available:**
-1. Look up the framework's common commands in `references/doc-frameworks.md`.
+1. Look up the framework's common commands in `references/doc-frameworks.yaml`.
 2. Construct the command from the catalog entry.
 3. Record it in AGENTS.md Commands for future reference.
 4. Execute it and report the result.
