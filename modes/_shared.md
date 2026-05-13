@@ -127,8 +127,8 @@ When the user says "I don't know" or defers a decision:
   carries the session state across invocations.
 - Never forget [UNDECIDED] items. Bring them up at the start of any continuation
   session. Only drop them when the user explicitly says to.
-- The `references/doc-frameworks.md` catalog is designed for iterative
-  extension. When the user adds a new framework, update the detection table
+- The `references/doc-frameworks.yaml` catalog is designed for iterative
+  extension. When the user adds a new framework, update the detection entries
   and add an entry to the ecosystem section.
 - AGENTS.md is git-trackable by design. The user can commit it and share it
   with colleagues. Write it assuming it will be read by humans and other

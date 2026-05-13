@@ -13,13 +13,13 @@ wants a map of what to write before writing it.
 ### Step 0: Detect or select documentation framework
 
 1. **Scan the repo** for known framework config files. See
-   `references/doc-frameworks.md` for the detection quick-reference table.
+   `references/doc-frameworks.yaml` for the detection quick-reference table.
 
 2. **If a config file is found**: confirm with the user ("I see an
    `mkdocs.yml` — stick with mkdocs?") and record the decision in
    AGENTS.md Config.
 
-3. **If no config is found**: load `references/doc-frameworks.md` and present
+3. **If no config is found**: load `references/doc-frameworks.yaml` and present
    a survey table of framework options for the library's ecosystem. Sort by
    modernization bias (last commit freshness, community size, build speed).
    Call out frameworks the user has personal experience with (★★★). Include:

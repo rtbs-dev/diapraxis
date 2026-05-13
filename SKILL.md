@@ -72,4 +72,4 @@ tutorials → how-to guides → reference → explanation.
 2. Then load the mode-specific file from `modes/{mode}.md`.
 3. Reference files are loaded on demand when needed:
    - `references/diataxis-framework.md` — full Diataxis reference card
-   - `references/doc-frameworks.md` — documentation framework catalog
+   - `references/doc-frameworks.yaml` — documentation framework catalog
